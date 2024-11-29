@@ -38,6 +38,7 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
         {" "}
         <CabInfo
           imageURL="/sk-tours-travels/assets/images/cab1.jpg"
+          heading="On Time"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
@@ -50,6 +51,7 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
         />
         <CabInfo
           imageURL="/sk-tours-travels/assets/images/cab2.jpg"
+          heading="Luxury"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
@@ -62,6 +64,7 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
         />
         <CabInfo
           imageURL="/sk-tours-travels/assets/images/cab3.jpg"
+          heading="Confidence"
           description="Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and

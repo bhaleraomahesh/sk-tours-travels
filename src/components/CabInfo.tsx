@@ -1,11 +1,12 @@
-import { Stack, Paper, Box } from "@mui/material";
+import { Stack, Paper, Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material";
 interface ICabInfo {
   imageURL: string;
   description: string;
+  heading: string;
 }
 const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
-  const { imageURL, description } = props;
+  const { imageURL, heading, description } = props;
   const theme = useTheme(); // Access the theme values
 
   return (
@@ -24,11 +25,13 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
           flex: 1, // Ensures equal width in row layout (50% each)
           padding: 2,
           display: "flex",
+          flexDirection: "column",
           alignItems: "start",
-          justifyContent: "center",
+          justifyContent: "start",
         }}
       >
-        {description}
+        <Typography variant="h1">{heading}</Typography>
+        <Typography component="p">{description}</Typography>
       </Paper>
       <Paper
         sx={{
