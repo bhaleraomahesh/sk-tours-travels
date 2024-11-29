@@ -3,4 +3,5 @@ export enum MenuType {
   PrivacyPolicy = "Privacy Policy",
   About = "About Us",
   TermsConditions = "TermsConditions",
+  Packages = "Packages",
 }

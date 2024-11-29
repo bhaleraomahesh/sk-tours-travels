@@ -10,11 +10,13 @@ import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import About from "./Pages/About";
 import { useRef } from "react";
 import { MenuType } from "./utils/helper";
+import Packages from "./Pages/Packages";
 
 function App() {
   const homeRef = useRef<HTMLDivElement>(null);
   const PrivacyRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
+  const packagesRef = useRef<HTMLDivElement>(null);
 
   // Step 2: Function to handle smooth scroll to sections
   const scrollToSection = (section: string) => {
@@ -37,6 +39,12 @@ function App() {
         });
         // window.scrollBy(0, -50);
         break;
+      case MenuType.Packages:
+        packagesRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+        break;
       default:
         break;
     }
@@ -57,6 +65,7 @@ function App() {
       >
         <Home ref={homeRef} />
         <About ref={contactRef} />
+        <Packages ref={packagesRef} />
         <PrivacyPolicy ref={PrivacyRef} />
 
         <ReactWhatsappButton
