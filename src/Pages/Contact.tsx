@@ -1,9 +1,9 @@
 import { Box, Paper, Typography } from "@mui/material";
 // import Grid from "@mui/material/Grid2";
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { useTheme } from "@mui/material";
 
-const Contact: React.FC = forwardRef<HTMLDivElement, object>((props, ref) => {
+const Contact = forwardRef<HTMLDivElement, object>((_, ref) => {
   const theme = useTheme(); // Access the theme values
 
   return (

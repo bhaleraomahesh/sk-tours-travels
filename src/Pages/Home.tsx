@@ -1,10 +1,10 @@
 import { Box, Stack } from "@mui/material";
 // import Grid from "@mui/material/Grid2";
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import MediaPlayer from "../components/MediaPlayer";
 import CabInfo from "../components/CabInfo";
 
-const Home: React.FC = forwardRef<HTMLDivElement, object>((props, ref) => {
+const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
   return (
     <Stack
       ref={ref}
