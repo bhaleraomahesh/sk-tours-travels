@@ -24,7 +24,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Home", "Contact", "Privacy Policy"];
+const navItems = ["Home", "About Us", "Privacy Policy"];
 
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
@@ -36,15 +36,14 @@ export default function DrawerAppBar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        SK Tours & Travels
-      </Typography>
+      <Box></Box>
+
       <Divider />
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
-              sx={{ textAlign: "center" }}
+              sx={{ textAlign: "left" }}
               onClick={() => props.handleMenuClick(item)}
             >
               <ListItemText primary={item} />

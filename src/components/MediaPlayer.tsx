@@ -1,11 +1,13 @@
-import { Box } from "@mui/material";
+import { Box, Card, CardContent, CardMedia } from "@mui/material";
 import React, { useEffect, useRef } from "react";
+import { useTheme } from "@mui/material";
 
 interface IMediaPlayerProps {
   mediaURL: string;
 }
 const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
   const { mediaURL } = props;
+  const theme = useTheme();
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -52,15 +54,37 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
         height: {
           xs: "50vh",
           sm: "50vh",
-          md: "calc(100vh - 60px)",
+          md: "calc(100vh - 50px)",
         },
+        borderRadius: 0,
         width: "100%",
         margin: "0 auto", // Center the Box horizontally
       }}
       style={{ textAlign: "center", position: "relative" }}
     >
       {/* Video player */}
-      <video
+      <Card sx={{ width: "100%", height: "100%", borderRadius: 0 }}>
+        <CardMedia
+          ref={videoRef}
+          component="video"
+          muted
+          sx={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            mb: theme.spacing(1),
+            borderRadius: 0,
+          }}
+          autoPlay
+          loop
+        >
+          <source src={mediaURL} type="video/mp4" />
+        </CardMedia>
+        <CardContent>
+          <p>Video content description goes here.</p>
+        </CardContent>
+      </Card>
+      {/* <video
         ref={videoRef}
         width="100%"
         height="100%"
@@ -74,6 +98,7 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
       >
         <source src={mediaURL} type="video/mp4" />
       </video>
+      Your browser does not support the video tag. */}
     </Box>
   );
 };

@@ -1,6 +1,6 @@
 export enum MenuType {
   Home = "Home",
   PrivacyPolicy = "Privacy Policy",
-  Contact = "Contact",
+  About = "About Us",
   TermsConditions = "TermsConditions",
 }

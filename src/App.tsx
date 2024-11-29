@@ -7,7 +7,7 @@ import theme from "./styles/Theme/Theme";
 import ReactWhatsappButton from "react-whatsapp-button";
 import Home from "./Pages/Home";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
-import Contact from "./Pages/Contact";
+import About from "./Pages/About";
 import { useRef } from "react";
 import { MenuType } from "./utils/helper";
 
@@ -30,7 +30,7 @@ function App() {
         });
         // window.scrollBy(0, -50);
         break;
-      case MenuType.Contact:
+      case MenuType.About:
         contactRef.current?.scrollIntoView({
           behavior: "smooth",
           block: "start",
@@ -52,11 +52,11 @@ function App() {
         spacing={2}
         sx={{
           width: "100%", // Ensure the Stack takes full width
-          mt: theme.spacing(8),
+          mt: theme.spacing(7),
         }}
       >
         <Home ref={homeRef} />
-        <Contact ref={contactRef} />
+        <About ref={contactRef} />
         <PrivacyPolicy ref={PrivacyRef} />
 
         <ReactWhatsappButton
