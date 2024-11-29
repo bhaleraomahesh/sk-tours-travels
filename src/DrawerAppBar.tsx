@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { useTheme } from "@mui/material";
 
 interface Props {
   /**
@@ -29,6 +30,8 @@ const navItems = ["Home", "About Us", "Packages", "Privacy Policy"];
 export default function DrawerAppBar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const theme = useTheme();
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -61,7 +64,13 @@ export default function DrawerAppBar(props: Props) {
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <AppBar component="nav">
-        <Toolbar>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -78,15 +87,44 @@ export default function DrawerAppBar(props: Props) {
           >
             SK Tours & Travels
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box
+            sx={{
+              display: { xs: "none", sm: "flex" },
+              flexGrow: 1,
+              justifyContent: "end",
+              alignItems: "center",
+              height: theme.spacing(8),
+            }}
+          >
             {navItems.map((item) => (
-              <Button
+              <Box
                 key={item}
-                sx={{ color: "#fff" }}
+                sx={{
+                  height: "100%", // Make it fill the entire AppBar height
+                  display: "flex",
+                  justifyContent: "center", // Center content horizontally
+                  alignItems: "center", // Center content vertically
+                  padding: "0 16px",
+                  "&:hover": {
+                    backgroundColor: "secondary.main", // Change background color on hover
+                    color: "primary.main", // Change text color on hover
+                  },
+                  cursor: "pointer",
+                }}
                 onClick={() => props.handleMenuClick(item)}
               >
+                {/* <Typography
+                  sx={{
+                    color: "#fff",
+                    "&:hover": {
+                      backgroundColor: "secondary.main", // Change background color on hover
+                      color: "primary.main", // Change text color on hover
+                    },
+                  }}
+                > */}
                 {item}
-              </Button>
+                {/* </Typography> */}
+              </Box>
             ))}
           </Box>
         </Toolbar>

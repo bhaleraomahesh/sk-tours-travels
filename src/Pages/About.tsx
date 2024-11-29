@@ -8,9 +8,10 @@ const About = forwardRef<HTMLDivElement, object>((_, ref) => {
 
   return (
     <Paper
+      ref={ref}
       sx={{
         flex: 1, // Ensures equal width in row layout (50% each)
-        padding: theme.spacing(2),
+        padding: theme.spacing(8),
         display: "flex",
         alignItems: "start",
         justifyContent: "center",
@@ -18,11 +19,7 @@ const About = forwardRef<HTMLDivElement, object>((_, ref) => {
         width: "100%",
       }}
     >
-      <Box
-        ref={ref}
-        component="section"
-        sx={{ width: "100%", height: "100vh" }}
-      >
+      <Box component="section" sx={{ width: "100%", height: "100vh" }}>
         <Typography variant="h3">About Us</Typography>
         <Typography>
           Lorem Ipsum is simply dummy text of the printing and typesetting
