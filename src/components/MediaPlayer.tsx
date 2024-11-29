@@ -52,9 +52,9 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
     <Box
       sx={{
         height: {
-          xs: "50vh",
-          sm: "50vh",
-          md: "calc(100vh - 50px)",
+          xs: "40vh",
+          sm: "40vh",
+          md: "calc(100vh - 56px)",
         },
         borderRadius: 0,
         width: "100%",
