@@ -16,13 +16,13 @@ export const CAB_INFO: ICabInfo[] = [
     title: "Safely & Comfortably",
     description:
       "We prioritize your comfort and safety with every ride. Our cabs come equipped with clean interiors, a Bisleri bottle, tissue paper, and essential medicines, ensuring you enjoy a comfortable and stress-free journey. Rest assured, your ride will be smooth and secure, allowing you to relax and enjoy your time on the road.",
-    image: "cab3.jpg",
+    image: "comfort_trip.jpg",
   },
   {
     title: "Timely & Safe Arrivals",
     description:
       "Punctuality is key. Our cabs always reach your location on time, ensuring a timely and safe arrival at your destination. With our reliable service, you won't need to worry about taking alternate routes—just sit back, relax, and enjoy the ride with peace of mind.",
-    image: "cab2.jpg",
+    image: "ontime_trip.jpg",
   },
   {
     title: "Knowledgeable & Trustworthy Drivers",
@@ -34,6 +34,6 @@ export const CAB_INFO: ICabInfo[] = [
     title: "Enjoy Your Ride",
     description:
       "From start to finish, our goal is to make your travel experience enjoyable and stress-free. Choose us for a safe, comfortable, and punctual ride every time.",
-    image: "enjoy.jpg",
+    image: "enjoy_trip.jpg",
   },
 ];
