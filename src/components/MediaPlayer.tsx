@@ -1,13 +1,13 @@
 import { Box, Card, CardContent, CardMedia } from "@mui/material";
 import React, { useEffect, useRef } from "react";
-import { useTheme } from "@mui/material";
+// import { useTheme } from "@mui/material";
 
 interface IMediaPlayerProps {
   mediaURL: string;
 }
 const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
   const { mediaURL } = props;
-  const theme = useTheme();
+  // const theme = useTheme();
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
