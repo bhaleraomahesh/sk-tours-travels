@@ -67,11 +67,12 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
         <CardMedia
           ref={videoRef}
           component="video"
+          controls
           muted
           sx={{
             width: "100%",
             height: "100%",
-            objectFit: "contain",
+            objectFit: "fill",
             mb: theme.spacing(1),
             borderRadius: 0,
           }}
