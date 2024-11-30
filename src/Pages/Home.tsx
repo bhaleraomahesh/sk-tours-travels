@@ -34,6 +34,8 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
         spacing={2}
         sx={{
           width: "100%", // Ensure the Stack takes full width
+          pr: theme.spacing(2),
+          pl: theme.spacing(2),
         }}
       >
         {CAB_INFO?.map((cab: ICabInfo) => (
