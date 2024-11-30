@@ -1,13 +1,13 @@
-import { Box, Card, CardContent, CardMedia } from "@mui/material";
+import { Box } from "@mui/material";
 import React, { useEffect, useRef } from "react";
-// import { useTheme } from "@mui/material";
-
+import { useTheme } from "@mui/material";
+// Card, CardContent, CardMedia, Typography
 interface IMediaPlayerProps {
   mediaURL: string;
 }
 const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
   const { mediaURL } = props;
-  // const theme = useTheme();
+  const theme = useTheme();
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
         height: {
           xs: "40vh",
           sm: "40vh",
-          md: "calc(100vh - 60px)",
+          md: "calc(100vh - 56px)",
         },
         borderRadius: 0,
         width: "100%",
@@ -63,42 +63,44 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
       style={{ textAlign: "center", position: "relative" }}
     >
       {/* Video player */}
-      <Card sx={{ width: "100%", height: "100%" }}>
+      {/* <Card sx={{ width: "100%", height: "100%", borderRadius: 0 }}>
         <CardMedia
           ref={videoRef}
           component="video"
-          autoPlay
-          loop
           muted
+          loop
+          autoPlay
           sx={{
             width: "100%",
-            // height: "100%",
+            height: "100%",
             objectFit: "fill",
-            // mb: theme.spacing(1),
-            // borderRadius: 0,
+            mb: theme.spacing(1),
+            borderRadius: 0,
           }}
+          image={mediaURL}
         >
-          <source src={mediaURL} type="video/mp4" />
         </CardMedia>
         <CardContent>
-          <p>Video content description goes here.</p>
+          <Typography component="p">
+            Travel with confidence and confort
+          </Typography>
         </CardContent>
-      </Card>
-      {/* <video
+      </Card> */}
+      <video
         ref={videoRef}
         width="100%"
         height="100%"
-        loop // Automatically loops the video
-        controls
+        muted
+        loop
+        autoPlay
         style={{
-          marginBottom: "20px",
-
-          objectFit: "cover",
+          marginBottom: theme.spacing(1),
+          objectFit: "fill",
+          borderRadius: 0,
         }}
       >
         <source src={mediaURL} type="video/mp4" />
       </video>
-      Your browser does not support the video tag. */}
     </Box>
   );
 };
