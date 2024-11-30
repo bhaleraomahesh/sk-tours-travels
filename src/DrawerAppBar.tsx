@@ -112,17 +112,7 @@ export default function DrawerAppBar(props: Props) {
                 }}
                 onClick={() => props.handleMenuClick(item)}
               >
-                {/* <Typography
-                  sx={{
-                    color: "#fff",
-                    "&:hover": {
-                      backgroundColor: "secondary.main", // Change background color on hover
-                      color: "primary.main", // Change text color on hover
-                    },
-                  }}
-                > */}
                 {item}
-                {/* </Typography> */}
               </Box>
             ))}
           </Box>

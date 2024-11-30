@@ -19,7 +19,7 @@ const PrivacyPolicy = forwardRef<HTMLDivElement, object>((_, ref) => {
         ref={ref}
         sx={{
           flex: 1, // Ensures equal width in row layout (50% each)
-          pt: theme.spacing(8),
+          pt: theme.spacing(2),
           pl: theme.spacing(2),
           pr: theme.spacing(2),
           display: "flex",

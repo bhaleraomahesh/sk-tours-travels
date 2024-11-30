@@ -23,31 +23,35 @@ function App() {
     switch (section) {
       case MenuType.Home:
         homeRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-        // window.scrollBy(0, -50);
+
         break;
       case MenuType.PrivacyPolicy:
         PrivacyRef.current?.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
-        // window.scrollBy(0, -50);
+
         break;
       case MenuType.About:
         contactRef.current?.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
-        // window.scrollBy(0, -50);
+
         break;
       case MenuType.Packages:
         packagesRef.current?.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
+
         break;
       default:
         break;
     }
+    setTimeout(() => {
+      window.scrollBy(0, -64);
+    }, 1000);
   };
 
   return (
