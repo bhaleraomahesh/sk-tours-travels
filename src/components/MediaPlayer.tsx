@@ -32,7 +32,7 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
     // Create an IntersectionObserver instance with the callback
     const observer = new IntersectionObserver(handleIntersection, {
       root: null, // Observe intersections with the viewport
-      threshold: 0.5, // 50% of the video should be in view to trigger
+      threshold: 0.4, // 50% of the video should be in view to trigger
     });
 
     // Observe the video element
@@ -71,7 +71,7 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
           sx={{
             width: "100%",
             height: "100%",
-            objectFit: "cover",
+            objectFit: "contain",
             mb: theme.spacing(1),
             borderRadius: 0,
           }}
