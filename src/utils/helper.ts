@@ -13,7 +13,7 @@ export interface ICabInfo {
 
 export const CAB_INFO: ICabInfo[] = [
   {
-    title: "Safely & Comfortably",
+    title: "Clean & Comfortably",
     description:
       "We prioritize your comfort and safety with every ride. Our cabs come equipped with clean interiors, a Bisleri bottle, tissue paper, and essential medicines, ensuring you enjoy a comfortable and stress-free journey. Rest assured, your ride will be smooth and secure, allowing you to relax and enjoy your time on the road.",
     image: "comfort_trip.jpg",
