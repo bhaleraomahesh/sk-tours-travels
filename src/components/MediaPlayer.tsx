@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, CardMedia } from "@mui/material";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { useTheme } from "@mui/material";
 
 interface IMediaPlayerProps {
