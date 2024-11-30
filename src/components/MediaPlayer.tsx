@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "@mui/material";
 // Card, CardContent, CardMedia, Typography
 interface IMediaPlayerProps {
@@ -9,51 +9,50 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
   const { mediaURL } = props;
   const theme = useTheme();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    // Create an intersection observer callback function
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        // Check if the video is in the viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
         if (entry.isIntersecting) {
-          // Play the video when it's in view
-          if (videoRef.current) {
-            videoRef.current.play();
-          }
+          // Video is in view, trigger play
+          setIsInView(true);
         } else {
-          // Pause the video when it's out of view
-          if (videoRef.current) {
-            videoRef.current.pause();
-          }
+          // Video is out of view, pause or stop it (optional)
+          setIsInView(false);
         }
-      });
-    };
+      },
+      {
+        threshold: 0.5, // Trigger when 50% of the video is in the viewport
+      }
+    );
 
-    // Create an IntersectionObserver instance with the callback
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: null, // Observe intersections with the viewport
-      threshold: 0.4, // 50% of the video should be in view to trigger
-    });
-
-    // Observe the video element
     if (videoRef.current) {
       observer.observe(videoRef.current);
     }
 
-    // Cleanup the observer on component unmount
     return () => {
       if (videoRef.current) {
-        observer.unobserve(videoRef?.current);
+        observer.unobserve(videoRef.current);
       }
     };
   }, []); // Empty array means this effect runs onc
+
+  useEffect(() => {
+    if (isInView && videoRef.current) {
+      videoRef.current.play(); // Start video when it's in view
+    } else if (!isInView && videoRef.current) {
+      videoRef.current.pause(); // Optionally pause the video when out of view
+    }
+  }, [isInView]);
 
   return (
     <Box
       sx={{
         height: {
-          xs: "40vh",
-          sm: "40vh",
+          xs: "60vh",
+          sm: "70vh",
           md: "calc(100vh - 56px)",
         },
         borderRadius: 0,
@@ -93,9 +92,10 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
         muted
         loop
         autoPlay
+        playsInline
         style={{
           marginBottom: theme.spacing(1),
-          objectFit: "fill",
+          objectFit: "cover",
           borderRadius: 0,
         }}
       >
