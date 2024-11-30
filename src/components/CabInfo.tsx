@@ -1,12 +1,12 @@
 import { Stack, Paper, Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material";
 interface ICabInfo {
-  imageURL: string;
-  description: string;
   heading: string;
+  description: string;
+  image: string;
 }
 const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
-  const { imageURL, heading, description } = props;
+  const { image, heading, description } = props;
   const theme = useTheme(); // Access the theme values
 
   return (
@@ -45,7 +45,7 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
       >
         <Box>
           <img
-            src={imageURL}
+            src={`/sk-tours-travels/assets/images/${image}`}
             alt="Sample"
             style={{
               maxHeight: "100%",

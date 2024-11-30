@@ -4,6 +4,7 @@ import { forwardRef } from "react";
 import MediaPlayer from "../components/MediaPlayer";
 import CabInfo from "../components/CabInfo";
 import { useTheme } from "@mui/material";
+import { ICabInfo, CAB_INFO } from "../utils/helper";
 
 const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
   const theme = useTheme(); // Access the theme values
@@ -22,7 +23,7 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
       }}
     >
       <Box sx={{ width: "100%", position: "relative" }}>
-        <MediaPlayer mediaURL="/sk-tours-travels/assets/video/sample1.mp4" />
+        <MediaPlayer mediaURL="/sk-tours-travels/assets/video/sktourvideo.MP4" />
       </Box>
       <Stack
         ref={ref}
@@ -35,46 +36,14 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
           width: "100%", // Ensure the Stack takes full width
         }}
       >
-        {" "}
-        <CabInfo
-          imageURL="/sk-tours-travels/assets/images/cab1.jpg"
-          heading="On Time"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum."
-        />
-        <CabInfo
-          imageURL="/sk-tours-travels/assets/images/cab2.jpg"
-          heading="Luxury"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum."
-        />
-        <CabInfo
-          imageURL="/sk-tours-travels/assets/images/cab3.jpg"
-          heading="Confidence"
-          description="Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum."
-        />
+        {CAB_INFO?.map((cab: ICabInfo) => (
+          <CabInfo
+            key={cab.title}
+            image={cab.image}
+            heading={cab.title}
+            description={cab.description}
+          />
+        ))}
       </Stack>
     </Stack>
   );
