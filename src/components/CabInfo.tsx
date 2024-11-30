@@ -23,11 +23,12 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
       <Paper
         sx={{
           flex: 1, // Ensures equal width in row layout (50% each)
-          padding: 2,
           display: "flex",
           flexDirection: "column",
           alignItems: "start",
           justifyContent: "start",
+          height: 300,
+          padding: 2,
         }}
       >
         <Typography variant="h1">{heading}</Typography>
@@ -36,22 +37,33 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
       <Paper
         sx={{
           flex: 1, // Ensures equal width in row layout (50% each)
-          padding: 2,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          height: 300,
+          overflowY: "hidden",
+          padding: 2,
         }}
         elevation={3}
       >
-        <Box>
+        <Box
+          style={{
+            maxHeight: "100%",
+            width: "100%",
+            height: "100%",
+            overflowY: "hidden",
+            borderRadius: "8px",
+          }}
+        >
           <img
             src={`/sk-tours-travels/assets/images/${image}`}
             alt="Sample"
             style={{
               maxHeight: "100%",
               width: "100%",
-              height: "auto",
+              height: "100%",
               borderRadius: "8px",
+              objectFit: "cover",
             }}
           />
         </Box>

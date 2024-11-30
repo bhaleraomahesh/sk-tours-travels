@@ -23,7 +23,7 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
       }}
     >
       <Box sx={{ width: "100%", position: "relative" }}>
-        <MediaPlayer mediaURL="/sk-tours-travels/assets/video/sktourvideo.MP4" />
+        <MediaPlayer mediaURL="/sk-tours-travels/assets/video/sktourvideo.mp4" />
       </Box>
       <Stack
         ref={ref}
