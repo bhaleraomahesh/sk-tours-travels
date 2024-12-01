@@ -5,6 +5,7 @@ export enum MenuType {
   TermsConditions = "TermsConditions",
   Packages = "Packages",
 }
+
 export interface ICabInfo {
   title: string;
   description: string;

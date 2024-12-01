@@ -2,12 +2,12 @@ import { Paper, Typography, Box } from "@mui/material";
 import { useTheme } from "@mui/material";
 
 const DiscountOffer = () => {
-  const theme = useTheme(); // Access the theme values
+  const theme = useTheme();
 
   return (
     <Paper
       sx={{
-        backgroundColor: "primary.main", // Set a background color for the offer
+        backgroundColor: "primary.main",
         padding: theme.spacing(2),
         display: "flex",
         justifyContent: "space-between",

@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "@mui/material";
-// Card, CardContent, CardMedia, Typography
+
 interface IMediaPlayerProps {
   mediaURL: string;
 }
@@ -34,7 +34,7 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
 
     return () => {
       if (videoRef.current) {
-        observer.unobserve(videoRef.current);
+        observer.unobserve(videoRef?.current);
       }
     };
   }, []); // Empty array means this effect runs onc
@@ -62,30 +62,6 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
       }}
       style={{ textAlign: "center", position: "relative" }}
     >
-      {/* Video player */}
-      {/* <Card sx={{ width: "100%", height: "100%", borderRadius: 0 }}>
-        <CardMedia
-          ref={videoRef}
-          component="video"
-          muted
-          loop
-          autoPlay
-          sx={{
-            width: "100%",
-            height: "100%",
-            objectFit: "fill",
-            mb: theme.spacing(1),
-            borderRadius: 0,
-          }}
-          image={mediaURL}
-        >
-        </CardMedia>
-        <CardContent>
-          <Typography component="p">
-            Travel with confidence and confort
-          </Typography>
-        </CardContent>
-      </Card> */}
       <video
         ref={videoRef}
         width="100%"
