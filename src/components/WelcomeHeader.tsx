@@ -20,7 +20,7 @@ const WelcomeHeader = () => {
       elevation={0}
     >
       <Typography
-        variant="h1"
+        variant="h3"
         sx={{
           //   fontWeight: "bold",
           color: "primary.main",

@@ -32,7 +32,7 @@ const About = forwardRef<HTMLDivElement, object>((_, ref) => {
         elevation={3}
       >
         <Box component="section" sx={{ width: "100%", height: "100vh" }}>
-          <Typography variant="h1">About Us</Typography>
+          <Typography variant="h3">About Us</Typography>
           <Typography>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
