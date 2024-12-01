@@ -11,7 +11,7 @@ const FloatingCallButton = (props: ICallProps) => {
       sx={{
         position: "fixed",
         bottom: 20,
-        left: 25,
+        left: 20,
         zIndex: 9999,
       }}
       onClick={() => (window.location.href = `tel:${phoneNumber}`)}

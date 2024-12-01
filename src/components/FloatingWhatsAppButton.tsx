@@ -20,7 +20,7 @@ const FloatingWhatsAppButton = (props: ICallProps) => {
       sx={{
         position: "fixed",
         bottom: 20,
-        right: 25,
+        right: 20,
         zIndex: 9999,
         bgcolor: "green",
       }}
