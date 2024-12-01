@@ -13,6 +13,7 @@ const Packages = forwardRef<HTMLDivElement, object>((_, ref) => {
         width: "100%", // Ensure the Stack takes full width
         pr: theme.spacing(2),
         pl: theme.spacing(2),
+        pb: theme.spacing(2),
       }}
     >
       <Paper
@@ -22,6 +23,7 @@ const Packages = forwardRef<HTMLDivElement, object>((_, ref) => {
           pt: theme.spacing(2),
           pl: theme.spacing(2),
           pr: theme.spacing(2),
+
           display: "flex",
           alignItems: "start",
           justifyContent: "center",

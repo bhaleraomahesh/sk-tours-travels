@@ -11,6 +11,7 @@ import About from "./Pages/About";
 import { useRef } from "react";
 import { MenuType } from "./utils/helper";
 import Packages from "./Pages/Packages";
+import Footer from "./components/Footer";
 
 function App() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -71,12 +72,12 @@ function App() {
         <About ref={contactRef} />
         <Packages ref={packagesRef} />
         <PrivacyPolicy ref={PrivacyRef} />
-
+        <Footer />
         <ReactWhatsappButton
           countryCode="91"
           phoneNumber="9921142910"
           animated
-          message={`Name: \nDate: \nTime:`}
+          message={`Name: \nDate: \nTime: \n Number of Passengers: \nPickup: \n Drop:`}
         />
       </Stack>
     </ThemeProvider>
