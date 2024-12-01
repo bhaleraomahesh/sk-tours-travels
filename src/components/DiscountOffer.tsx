@@ -42,14 +42,14 @@ const DiscountOffer = (props: ICallProps) => {
         }}
       >
         <Alert
-          severity="success"
+          severity="info"
           sx={{
-            backgroundColor: "#f4e042", // Light yellow background for the discount offer
+            // backgroundColor: "#f4e042", // Light yellow background for the discount offer
             fontWeight: "bold",
             width: {
               xs: "55vw",
-              sm: "65vw",
-              md: "70vs",
+              sm: "55vw",
+              md: "50vw",
             },
           }}
           action={
@@ -58,7 +58,7 @@ const DiscountOffer = (props: ICallProps) => {
             </Button>
           }
         >
-          Get 10% off on your first booking with SK Tours & Travels!
+          Get 10% off on your booking!
         </Alert>
       </Snackbar>
     </>
