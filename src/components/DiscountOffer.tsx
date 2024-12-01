@@ -1,41 +1,67 @@
-import { Paper, Typography, Box } from "@mui/material";
-import { useTheme } from "@mui/material";
+import { useState } from "react";
+import { Snackbar, Alert, Button } from "@mui/material";
+import { ICallProps } from "../utils/helper";
+// import { useTheme } from "@mui/material";
 
-const DiscountOffer = () => {
-  const theme = useTheme();
+const DiscountOffer = (props: ICallProps) => {
+  const { phoneNumber, message } = props;
+  //   const theme = useTheme(); // Access the theme values
+
+  const [open, setOpen] = useState(true);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleWhatsAppClick = () => {
+    // Encode the message so it can be used in the URL
+    const encodedMessage = encodeURIComponent(message || "Hi");
+    // Construct the WhatsApp URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    // Open WhatsApp chat in a new tab
+    window.open(whatsappUrl, "_blank");
+  };
 
   return (
-    <Paper
-      sx={{
-        backgroundColor: "primary.main",
-        padding: theme.spacing(2),
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        flexDirection: "row",
-        pt: theme.spacing(2),
-        pl: theme.spacing(2),
-        pr: theme.spacing(2),
-      }}
-      elevation={10}
-    >
-      <Box>
-        <Typography variant="h5" color="white">
-          Special Offer: 10% Discount
-        </Typography>
-        <Typography variant="body1" color="white" mt={1}>
-          Get 10% off on your first booking with SK Tours & Travels!
-        </Typography>
-      </Box>
-      {/* <Button
-        variant="contained"
-        color="secondary"
-        sx={{ marginLeft: 2 }}
-        href="/book-now" // Link to the booking page
+    <>
+      <Snackbar
+        open={open}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        //   autoHideDuration={6000} // Automatically hide after 6 seconds
+        onClose={handleClose}
+        sx={{
+          // Customize the Snackbar's position or styles
+          "& .MuiSnackbarContent-root": {
+            display: "flex", // Flexbox to align items
+            justifyContent: "center", // Center horizontally (optional)
+            alignItems: "center", // Center vertically
+            // className: "blinking-snackbar", // Apply blinking class to Snackbar content
+          },
+
+          // mb: theme.spacing(10),
+        }}
       >
-        Book Now
-      </Button> */}
-    </Paper>
+        <Alert
+          severity="success"
+          sx={{
+            backgroundColor: "#f4e042", // Light yellow background for the discount offer
+            fontWeight: "bold",
+            width: {
+              xs: "55vw",
+              sm: "65vw",
+              md: "70vs",
+            },
+          }}
+          action={
+            <Button color="inherit" size="small" onClick={handleWhatsAppClick}>
+              Book Now
+            </Button>
+          }
+        >
+          Get 10% off on your first booking with SK Tours & Travels!
+        </Alert>
+      </Snackbar>
+    </>
   );
 };
 

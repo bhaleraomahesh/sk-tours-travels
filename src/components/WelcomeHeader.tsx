@@ -36,10 +36,8 @@ const WelcomeHeader = () => {
           maxWidth: 700,
         }}
       >
-        Your journey begins here. Enjoy the comfort, convenience, and
-        reliability of SK Tours & Travels. Whether it's for business or leisure,
-        our premium cabs and experienced drivers are ready to take you wherever
-        you need to go.
+        Quick, Safe, Reliable, and Affordable Airport Transfers – Your Trusted
+        Partner, SK Tours & Travels.
       </Typography>
     </Paper>
   );

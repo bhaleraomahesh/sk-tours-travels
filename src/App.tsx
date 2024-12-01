@@ -3,15 +3,15 @@ import { Stack } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import DrawerAppBar from "./DrawerAppBar";
 import theme from "./styles/Theme/Theme";
-
-import ReactWhatsappButton from "react-whatsapp-button";
 import Home from "./Pages/Home";
 import PrivacyPolicy from "./Pages/PrivacyPolicy";
 import About from "./Pages/About";
 import { useRef } from "react";
-import { MenuType } from "./utils/helper";
+import { DEFAULT_WHATSAPP_MSG, MenuType } from "./utils/helper";
 import Packages from "./Pages/Packages";
 import Footer from "./components/Footer";
+import FloatingCallButton from "./components/FloatingCallButton";
+import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
 function App() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -66,6 +66,7 @@ function App() {
         sx={{
           width: "100%", // Ensure the Stack takes full width
           mt: theme.spacing(7),
+          mb: theme.spacing(10),
         }}
       >
         <Home ref={homeRef} />
@@ -73,12 +74,12 @@ function App() {
         <Packages ref={packagesRef} />
         <PrivacyPolicy ref={PrivacyRef} />
         <Footer />
-        <ReactWhatsappButton
-          countryCode="91"
-          phoneNumber="9921142910"
-          animated
-          message={`Name: \nDate: \nTime: \n Number of Passengers: \nPickup: \n Drop:`}
+
+        <FloatingWhatsAppButton
+          phoneNumber="+7620318531"
+          message={DEFAULT_WHATSAPP_MSG}
         />
+        <FloatingCallButton phoneNumber="+9176203433431" />
       </Stack>
     </ThemeProvider>
   );

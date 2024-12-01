@@ -12,6 +12,13 @@ export interface ICabInfo {
   image: string;
 }
 
+export interface ICallProps {
+  phoneNumber: string;
+  message?: string;
+}
+
+export const DEFAULT_WHATSAPP_MSG = `Name: \nDate: \nTime: \nNumber of Passengers: \nPickup: \n Drop:`;
+
 export const CAB_INFO: ICabInfo[] = [
   {
     title: "Clean & Comfortable",

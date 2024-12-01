@@ -20,18 +20,16 @@ const About = forwardRef<HTMLDivElement, object>((_, ref) => {
         ref={ref}
         sx={{
           flex: 1, // Ensures equal width in row layout (50% each)
-          pt: theme.spacing(2),
-          pl: theme.spacing(2),
-          pr: theme.spacing(2),
+          p: theme.spacing(2),
           display: "flex",
           alignItems: "start",
           justifyContent: "center",
-          height: "100vh",
+          height: "auto",
           width: "100%",
         }}
         elevation={3}
       >
-        <Box component="section" sx={{ width: "100%", height: "100vh" }}>
+        <Box component="section" sx={{ width: "100%", height: "auto" }}>
           <Typography variant="h3">About Us</Typography>
           <Typography>
             SK Tours & Travels - Your Trusted Travel Partner With over 10 years

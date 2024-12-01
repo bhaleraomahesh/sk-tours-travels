@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 import MediaPlayer from "../components/MediaPlayer";
 import CabInfo from "../components/CabInfo";
 import { useTheme } from "@mui/material";
-import { ICabInfo, CAB_INFO } from "../utils/helper";
+import { ICabInfo, CAB_INFO, DEFAULT_WHATSAPP_MSG } from "../utils/helper";
 import DiscountOffer from "../components/DiscountOffer";
 import WelcomeHeader from "../components/WelcomeHeader";
 const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
@@ -41,7 +41,10 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
         }}
       >
         <WelcomeHeader />
-        <DiscountOffer />
+        <DiscountOffer
+          phoneNumber="+7620318531"
+          message={DEFAULT_WHATSAPP_MSG}
+        />
         {CAB_INFO?.map((cab: ICabInfo) => (
           <CabInfo
             key={cab.title}
