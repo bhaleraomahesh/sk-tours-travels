@@ -24,7 +24,7 @@ const WelcomeHeader = () => {
         sx={{
           //   fontWeight: "bold",
           color: "primary.main",
-          //   marginBottom: 2,
+          mb: theme.spacing(2),
         }}
       >
         Welcome to SK Tours & Travels

@@ -30,7 +30,9 @@ const About = forwardRef<HTMLDivElement, object>((_, ref) => {
         elevation={3}
       >
         <Box component="section" sx={{ width: "100%", height: "auto" }}>
-          <Typography variant="h3">About Us</Typography>
+          <Typography variant="h3" sx={{ mb: theme.spacing(2) }}>
+            About Us
+          </Typography>
           <Typography>
             SK Tours & Travels - Your Trusted Travel Partner With over 10 years
             of experience in the transport industry, SK Tours & Travels has been

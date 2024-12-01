@@ -32,7 +32,9 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
         }}
         elevation={3}
       >
-        <Typography variant="h3">{heading}</Typography>
+        <Typography variant="h3" sx={{ mb: theme.spacing(2) }}>
+          {heading}
+        </Typography>
         <Typography component="p">{description}</Typography>
       </Paper>
       <Paper

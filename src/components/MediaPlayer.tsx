@@ -1,6 +1,8 @@
 import { Box } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "@mui/material";
+import DiscountOffer from "./DiscountOffer";
+import { DEFAULT_WHATSAPP_MSG } from "../utils/helper";
 
 interface IMediaPlayerProps {
   mediaURL: string;
@@ -78,6 +80,12 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
       >
         <source src={mediaURL} type="video/mp4" />
       </video>
+      {isInView ? (
+        <DiscountOffer
+          phoneNumber="+7620318531"
+          message={DEFAULT_WHATSAPP_MSG}
+        />
+      ) : null}
     </Box>
   );
 };

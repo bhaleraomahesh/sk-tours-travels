@@ -31,7 +31,9 @@ const Packages = forwardRef<HTMLDivElement, object>((_, ref) => {
         elevation={3}
       >
         <Box component="section" sx={{ width: "100%", height: "auto" }}>
-          <Typography variant="h3">Our Packages</Typography>
+          <Typography variant="h3" sx={{ mb: theme.spacing(2) }}>
+            Our Packages
+          </Typography>
           <Typography>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
