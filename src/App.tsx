@@ -76,10 +76,10 @@ function App() {
         <Footer />
 
         <FloatingWhatsAppButton
-          phoneNumber="+7620318531"
+          phoneNumber="+917620318531"
           message={DEFAULT_WHATSAPP_MSG}
         />
-        <FloatingCallButton phoneNumber="+9176203433431" />
+        <FloatingCallButton phoneNumber="+917620318531" />
       </Stack>
     </ThemeProvider>
   );
