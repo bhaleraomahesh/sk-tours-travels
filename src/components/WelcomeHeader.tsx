@@ -41,19 +41,6 @@ const WelcomeHeader = () => {
         our premium cabs and experienced drivers are ready to take you wherever
         you need to go.
       </Typography>
-      {/* <Button
-        variant="contained"
-        color="secondary"
-        size="large"
-        href="/book-now"
-        sx={{
-          padding: "10px 20px",
-          fontSize: "16px",
-          fontWeight: "bold",
-        }}
-      >
-        Book Your Ride Now
-      </Button> */}
     </Paper>
   );
 };
