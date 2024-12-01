@@ -84,7 +84,7 @@ export default function DrawerAppBar(props: Props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "block", sm: "block" } }}
           >
-            SK Tours & Travels
+            Welcome to SK Tours & Travels
           </Typography>
           <Box
             sx={{

@@ -6,6 +6,7 @@ import CabInfo from "../components/CabInfo";
 import { useTheme } from "@mui/material";
 import { ICabInfo, CAB_INFO } from "../utils/helper";
 import DiscountOffer from "../components/DiscountOffer";
+import WelcomeHeader from "../components/WelcomeHeader";
 const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
   const theme = useTheme(); // Access the theme values
 
@@ -39,6 +40,7 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
           pl: theme.spacing(2),
         }}
       >
+        <WelcomeHeader />
         <DiscountOffer />
         {CAB_INFO?.map((cab: ICabInfo) => (
           <CabInfo

@@ -54,6 +54,7 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
           xs: "60vh",
           sm: "70vh",
           md: "calc(100vh - 56px)",
+          position: "relative",
         },
         borderRadius: 0,
         width: "100%",
