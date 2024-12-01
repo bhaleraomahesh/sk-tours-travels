@@ -17,7 +17,7 @@ export interface ICallProps {
   message?: string;
 }
 
-export const DEFAULT_WHATSAPP_MSG = `Name: \nDate: \nTime: \nNumber of Passengers: \nPickup: \n Drop:`;
+export const DEFAULT_WHATSAPP_MSG = `Name: \nDate: \nTime: \nNumber of Passengers: \nPickup: \nDrop:`;
 
 export const CAB_INFO: ICabInfo[] = [
   {
