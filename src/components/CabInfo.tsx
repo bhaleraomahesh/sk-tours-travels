@@ -1,4 +1,4 @@
-import { Stack, Paper, Box, Typography } from "@mui/material";
+import { Stack, Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material";
 interface ICabInfo {
   heading: string;
@@ -14,13 +14,13 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
       direction={{ xs: "column", sm: "row" }} // Default to column on small screens (xs), row on larger screens (sm+)
       justifyContent={{ xs: "stretch", sm: "row" }}
       alignItems={{ xs: "center", sm: "stretch" }}
-      spacing={2}
+      spacing={theme.spacing(2)}
       sx={{
         width: "100%", // Ensure the Stack takes full width
         mt: theme.spacing(2),
       }}
     >
-      <Paper
+      <Box
         sx={{
           flex: 1, // Ensures equal width in row layout (50% each)
           display: "flex",
@@ -28,16 +28,16 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
           alignItems: "start",
           justifyContent: "start",
           height: 300,
-          padding: 2,
+          // padding: 2,
         }}
-        elevation={3}
+        // elevation={3}
       >
-        <Typography variant="h3" sx={{ mb: theme.spacing(2) }}>
+        <Typography variant="h4" sx={{ mb: theme.spacing(1) }}>
           {heading}
         </Typography>
         <Typography component="p">{description}</Typography>
-      </Paper>
-      <Paper
+      </Box>
+      <Box
         sx={{
           flex: 1, // Ensures equal width in row layout (50% each)
           display: "flex",
@@ -45,9 +45,9 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
           justifyContent: "center",
           height: 300,
           overflowY: "hidden",
-          padding: 2,
+          // padding: 2,
         }}
-        elevation={3}
+        // elevation={3}
       >
         <Box
           style={{
@@ -70,7 +70,7 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
             }}
           />
         </Box>
-      </Paper>
+      </Box>
     </Stack>
   );
 };

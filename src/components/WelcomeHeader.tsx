@@ -1,45 +1,57 @@
-import { Paper, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material";
 
 const WelcomeHeader = () => {
   const theme = useTheme(); // Access the theme values
 
   return (
-    <Paper
+    <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "auto",
-        backgroundColor: "background.paper",
-        textAlign: "center",
-        padding: theme.spacing(2),
+        position: "absolute",
         width: "100%",
+        top: "0%",
+        left: "0",
+        transform: "translateY(-50%)", // Center text vertically
+        whiteSpace: "wrap", // Prevent text wrapping
+        color: "white",
+        zIndex: 999,
+        height: "100%",
+        pt: theme.spacing(7),
+        animation: "slideIn 2s ease-out forwards", // Apply sliding animation
+        "@keyframes slideIn": {
+          "0%": {
+            transform: "translateY(-100%)", // Start off-screen to the left
+          },
+          "100%": {
+            transform: "translateY(0%)", // Slide into the normal position
+          },
+        },
       }}
-      elevation={0}
     >
       <Typography
-        variant="h3"
+        variant="h1"
         sx={{
-          //   fontWeight: "bold",
-          color: "primary.main",
+          fontWeight: "bold",
+          color: "secondary.main",
           mb: theme.spacing(2),
+          textAlign: "center",
+          opacity: 1,
         }}
       >
         Welcome to SK Tours & Travels
       </Typography>
       <Typography
+        variant="h2"
         sx={{
-          //   color: "text.secondary",
-          marginBottom: 3,
-          maxWidth: 700,
+          color: "secondary.main",
+          textAlign: "center",
+          // fontWeight: "bold",
         }}
       >
         Quick, Safe, Reliable, and Affordable Airport Transfers – Your Trusted
         Partner, SK Tours & Travels.
       </Typography>
-    </Paper>
+    </Box>
   );
 };
 

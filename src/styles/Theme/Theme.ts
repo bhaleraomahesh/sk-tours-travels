@@ -12,6 +12,7 @@ const theme = createTheme({
     },
     background: {
       default: "#f4f4f4", // Light grey background
+      // paper: "#000000",
     },
   },
   typography: {
@@ -29,6 +30,10 @@ const theme = createTheme({
       fontWeight: 700,
       color: "#1976d2",
       fontSize: "1.5rem",
+    },
+    h4: {
+      fontWeight: 700,
+      fontSize: "1.2rem",
     },
   },
   spacing: 8, // Default spacing unit (multiples of 8px)

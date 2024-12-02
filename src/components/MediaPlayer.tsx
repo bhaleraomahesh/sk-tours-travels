@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useTheme } from "@mui/material";
 import DiscountOffer from "./DiscountOffer";
 import { DEFAULT_WHATSAPP_MSG } from "../utils/helper";
+import WelcomeHeader from "./WelcomeHeader";
 
 interface IMediaPlayerProps {
   mediaURL: string;
@@ -61,6 +62,7 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
         borderRadius: 0,
         width: "100%",
         margin: "0 auto", // Center the Box horizontally
+        position: "relative",
       }}
       style={{ textAlign: "center", position: "relative" }}
     >
@@ -80,11 +82,27 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
       >
         <source src={mediaURL} type="video/mp4" />
       </video>
+      <Box
+        sx={{
+          position: "absolute",
+          width: "100%",
+          top: "0%",
+          left: "0",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          height: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.3)", // Dark transparent background
+        }}
+      ></Box>
       {isInView ? (
-        <DiscountOffer
-          phoneNumber="+7620318531"
-          message={DEFAULT_WHATSAPP_MSG}
-        />
+        <>
+          <WelcomeHeader />
+          <DiscountOffer
+            phoneNumber="+7620318531"
+            message={DEFAULT_WHATSAPP_MSG}
+          />
+        </>
       ) : null}
     </Box>
   );
