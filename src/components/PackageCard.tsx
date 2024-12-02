@@ -130,6 +130,12 @@ const PackageCard = (props: IPackageCard) => {
           >
             Select Your Car
           </Typography>
+          <Typography
+            variant="h4"
+            sx={{ mb: theme.spacing(2), textAlign: "center" }}
+          >
+            {name.toUpperCase()}
+          </Typography>
 
           {/* Car List */}
           <CarList
