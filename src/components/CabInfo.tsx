@@ -43,7 +43,10 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          height: 300,
+          height: {
+            xs: 250,
+            sm: 300,
+          },
           overflowY: "hidden",
           // padding: 2,
         }}
