@@ -117,7 +117,7 @@ const PackageCard = (props: IPackageCard) => {
             width: "80%",
             maxWidth: 500,
             backgroundColor: "white",
-            padding: 3,
+            padding: theme.spacing(1),
             borderRadius: 2,
             boxShadow: 3,
             overflowY: "auto",

@@ -18,9 +18,18 @@ const CarListItem = (props: ICarItem) => {
 
   const { car, handleBookCar } = props;
   return (
-    <ListItem sx={{ borderBottom: "1px solid #ddd", paddingY: 2 }}>
-      <ListItemAvatar>
-        <Avatar variant="square" sx={{ width: 120, height: 80 }}>
+    <ListItem
+      sx={{
+        borderBottom: "1px solid #ddd",
+        paddingY: theme.spacing(1),
+        display: "flex",
+        justifyContent: "space-between",
+        pl: 0,
+        pr: theme.spacing(1),
+      }}
+    >
+      <ListItemAvatar sx={{ pl: 0, pr: 0 }}>
+        <Avatar variant="square" sx={{ width: 100, height: 80 }}>
           <img
             src={`/sk-tours-travels/assets/images/${car.image}`}
             alt={car.name}
@@ -34,7 +43,7 @@ const CarListItem = (props: ICarItem) => {
           display: "flex",
           flexDirection: "column",
           flexGrow: 1,
-          paddingLeft: 2,
+          paddingLeft: theme.spacing(1),
         }}
       >
         <ListItemText
@@ -50,7 +59,7 @@ const CarListItem = (props: ICarItem) => {
           variant="contained"
           color="primary"
           sx={{
-            padding: "8px 16px",
+            padding: "8px 8px",
             fontWeight: "bold",
             borderRadius: 1,
             "&:hover": {
@@ -60,7 +69,7 @@ const CarListItem = (props: ICarItem) => {
           }}
           onClick={() => handleBookCar(car)}
         >
-          Book Now
+          Book
         </Button>
       </Box>
     </ListItem>
