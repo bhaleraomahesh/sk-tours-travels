@@ -24,8 +24,17 @@ const CarListItem = (props: ICarItem) => {
         paddingY: theme.spacing(1),
         display: "flex",
         justifyContent: "space-between",
-        pl: 0,
-        pr: theme.spacing(1),
+
+        pl: {
+          xs: 0,
+          sm: 0,
+          md: theme.spacing(2),
+        },
+        pr: {
+          xs: theme.spacing(1),
+          sm: theme.spacing(1),
+          md: theme.spacing(2),
+        },
       }}
     >
       <ListItemAvatar sx={{ pl: 0, pr: 0 }}>
