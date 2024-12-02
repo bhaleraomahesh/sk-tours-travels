@@ -2,10 +2,15 @@ import { Box, Paper, Typography } from "@mui/material";
 // import Grid from "@mui/material/Grid2";
 import { forwardRef } from "react";
 import { useTheme } from "@mui/material";
+import { ITourPackage, TOUR_PACKAGES } from "../utils/helper";
+import PackageCard from "../components/PackageCard";
 
-const Packages = forwardRef<HTMLDivElement, object>((_, ref) => {
+interface IPackage {
+  phoneNumber: string;
+}
+const Packages = forwardRef<HTMLDivElement, IPackage>((props, ref) => {
   const theme = useTheme(); // Access the theme values
-
+  const { phoneNumber } = props;
   return (
     <Box
       component="section"
@@ -34,26 +39,26 @@ const Packages = forwardRef<HTMLDivElement, object>((_, ref) => {
           <Typography variant="h3" sx={{ mb: theme.spacing(2) }}>
             Our Packages
           </Typography>
-          <Typography>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum. It is a long
-            established fact that a reader will be distracted by the readable
-            content of a page when looking at its layout. The point of using
-            Lorem Ipsum is that it has a more-or-less normal distribution of
-            letters, as opposed to using 'Content here, content here', making it
-            look like readable English. Many desktop publishing packages and web
-            page editors now use Lorem Ipsum as their default model text, and a
-            search for 'lorem ipsum' will uncover many web sites still in their
-            infancy. Various versions have evolved over the years, sometimes by
-            accident, sometimes on purpose (injected humour and the like).
-          </Typography>
+          <Box sx={{ pr: theme.spacing(2), pl: theme.spacing(2) }}>
+            {/* Horizontal Scroll Container */}
+            <Box
+              sx={{
+                display: "flex",
+                overflowX: "auto", // Enable horizontal scrolling
+                gap: theme.spacing(4), // Space between cards
+                pt: theme.spacing(2), // Optional for better visual space at the bottom
+                pb: theme.spacing(2), // Optional for better visual space at the bottom
+              }}
+            >
+              {TOUR_PACKAGES.map((packageItem: ITourPackage, index) => (
+                <PackageCard
+                  package={packageItem}
+                  key={index}
+                  phoneNumber={phoneNumber}
+                />
+              ))}
+            </Box>
+          </Box>
         </Box>
       </Paper>
     </Box>

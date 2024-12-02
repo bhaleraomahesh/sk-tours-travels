@@ -71,7 +71,7 @@ function App() {
       >
         <Home ref={homeRef} />
         <About ref={contactRef} />
-        <Packages ref={packagesRef} />
+        <Packages ref={packagesRef} phoneNumber="+917620318531" />
         <PrivacyPolicy ref={PrivacyRef} />
         <Footer />
 
