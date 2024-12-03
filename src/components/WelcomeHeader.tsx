@@ -8,6 +8,7 @@ const WelcomeHeader = () => {
     <Box
       sx={{
         position: "absolute",
+        width: "90%",
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)", // Center text both vertically and horizontally
