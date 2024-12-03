@@ -12,6 +12,7 @@ import Packages from "./Pages/Packages";
 import Footer from "./components/Footer";
 import FloatingCallButton from "./components/FloatingCallButton";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -69,6 +70,8 @@ function App() {
           mb: theme.spacing(10),
         }}
       >
+        <ScrollToTopButton />
+
         <Home ref={homeRef} />
         <About ref={contactRef} />
         <Packages ref={packagesRef} phoneNumber="+917620318531" />
