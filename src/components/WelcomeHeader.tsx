@@ -14,7 +14,7 @@ const WelcomeHeader = () => {
         fontSize: "24px",
         fontWeight: "bold",
         color: "white",
-        whiteSpace: "nowrap", // Prevent text wrapping
+        whiteSpace: "wrap", // Prevent text wrapping
         zIndex: 999,
         height: "100%",
         pt: theme.spacing(8),
