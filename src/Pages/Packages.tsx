@@ -2,7 +2,12 @@ import { Box, Paper, Typography } from "@mui/material";
 // import Grid from "@mui/material/Grid2";
 import { forwardRef } from "react";
 import { useTheme } from "@mui/material";
-import { ITourPackage, TOUR_PACKAGES } from "../utils/helper";
+import {
+  ITourPackage,
+  COMMERCIAL_TOUR_PACKAGES,
+  HOLIDAY_TOUR_PACKAGES,
+  DEVOTIONAL_TOUR_PACKAGES,
+} from "../utils/helper";
 import PackageCard from "../components/PackageCard";
 
 interface IPackage {
@@ -39,7 +44,11 @@ const Packages = forwardRef<HTMLDivElement, IPackage>((props, ref) => {
           <Typography variant="h3" sx={{ mb: theme.spacing(2) }}>
             Our Packages
           </Typography>
-          <Box sx={{ pr: theme.spacing(2), pl: theme.spacing(2) }}>
+
+          <Box sx={{ mb: theme.spacing(7) }}>
+            <Typography variant="h4" sx={{ mb: theme.spacing(1) }}>
+              Airport Transfer
+            </Typography>
             {/* Horizontal Scroll Container */}
             <Box
               sx={{
@@ -50,13 +59,65 @@ const Packages = forwardRef<HTMLDivElement, IPackage>((props, ref) => {
                 pb: theme.spacing(2), // Optional for better visual space at the bottom
               }}
             >
-              {TOUR_PACKAGES.map((packageItem: ITourPackage, index) => (
+              {COMMERCIAL_TOUR_PACKAGES.map(
+                (packageItem: ITourPackage, index) => (
+                  <PackageCard
+                    package={packageItem}
+                    key={index}
+                    phoneNumber={phoneNumber}
+                  />
+                )
+              )}
+            </Box>
+          </Box>
+
+          <Box sx={{ mb: theme.spacing(7) }}>
+            <Typography variant="h4" sx={{ mb: theme.spacing(1) }}>
+              Holiday Packages
+            </Typography>
+            {/* Horizontal Scroll Container */}
+            <Box
+              sx={{
+                display: "flex",
+                overflowX: "auto", // Enable horizontal scrolling
+                gap: theme.spacing(4), // Space between cards
+                pt: theme.spacing(2), // Optional for better visual space at the bottom
+                pb: theme.spacing(2), // Optional for better visual space at the bottom
+              }}
+            >
+              {HOLIDAY_TOUR_PACKAGES.map((packageItem: ITourPackage, index) => (
                 <PackageCard
                   package={packageItem}
                   key={index}
                   phoneNumber={phoneNumber}
                 />
               ))}
+            </Box>
+          </Box>
+
+          <Box sx={{ mb: theme.spacing(7) }}>
+            <Typography variant="h4" sx={{ mb: theme.spacing(1) }}>
+              Devotional Packages
+            </Typography>
+            {/* Horizontal Scroll Container */}
+            <Box
+              sx={{
+                display: "flex",
+                overflowX: "auto", // Enable horizontal scrolling
+                gap: theme.spacing(4), // Space between cards
+                pt: theme.spacing(2), // Optional for better visual space at the bottom
+                pb: theme.spacing(2), // Optional for better visual space at the bottom
+              }}
+            >
+              {DEVOTIONAL_TOUR_PACKAGES.map(
+                (packageItem: ITourPackage, index) => (
+                  <PackageCard
+                    package={packageItem}
+                    key={index}
+                    phoneNumber={phoneNumber}
+                  />
+                )
+              )}
             </Box>
           </Box>
         </Box>

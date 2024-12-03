@@ -66,10 +66,11 @@ export interface ITourPackage {
 }
 
 // Sample data for the packages
-export const TOUR_PACKAGES: ITourPackage[] = [
+
+export const COMMERCIAL_TOUR_PACKAGES: ITourPackage[] = [
   {
-    name: "Pune To Shirdi",
-    image: "sai_baba.jpeg",
+    name: "Pune To Mumbai Airport",
+    image: "airport1.jpg",
     cars: [
       {
         name: "Ertiga",
@@ -134,8 +135,77 @@ export const TOUR_PACKAGES: ITourPackage[] = [
     ],
   },
   {
-    name: "Pune To Mahabaleshwar",
-    image: "mahabaleshwar.jpeg",
+    name: "Pune To Nashik Airport",
+    image: "airport2.jpg",
+    cars: [
+      {
+        name: "Ertiga",
+        image: "ertiga.jpeg",
+        type: "MVP",
+        facilities: [
+          {
+            title: "AC",
+            seats: 6,
+            bags: 2,
+          },
+        ],
+      },
+      {
+        name: "Swift Dezire",
+        image: "swift_dezire.jpeg",
+        type: "Sedan",
+        facilities: [
+          {
+            title: "AC",
+            seats: 4,
+            bags: 3,
+          },
+        ],
+      },
+      {
+        name: "Innova Crysta",
+        image: "innova.jpeg",
+        type: "Premium MVP",
+        facilities: [
+          {
+            title: "AC",
+            seats: 6,
+            bags: 5,
+          },
+        ],
+      },
+      {
+        name: "Etios",
+        image: "etios.jpeg",
+        type: "Premium Sedan",
+        facilities: [
+          {
+            title: "AC",
+            seats: 4,
+            bags: 3,
+          },
+        ],
+      },
+      {
+        name: "WagonR",
+        image: "wagonr.jpeg",
+        type: "Hatchback",
+        facilities: [
+          {
+            title: "AC",
+            seats: 4,
+            bags: 2,
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export const HOLIDAY_TOUR_PACKAGES: ITourPackage[] = [
+  {
+    name: "Goa",
+    image: "holiday1.jpg",
     cars: [
       {
         name: "Ertiga",
@@ -200,8 +270,8 @@ export const TOUR_PACKAGES: ITourPackage[] = [
     ],
   },
   {
-    name: "Pune To Shirdi",
-    image: "sai_baba.jpeg",
+    name: "Kerala",
+    image: "holiday2.jpg",
     cars: [
       {
         name: "Ertiga",
@@ -266,8 +336,8 @@ export const TOUR_PACKAGES: ITourPackage[] = [
     ],
   },
   {
-    name: "Pune To Mahabaleshwar",
-    image: "mahabaleshwar.jpeg",
+    name: "Humpy",
+    image: "holiday3.jpg",
     cars: [
       {
         name: "Ertiga",
@@ -331,6 +401,75 @@ export const TOUR_PACKAGES: ITourPackage[] = [
       },
     ],
   },
+  {
+    name: "Lonavala",
+    image: "holiday4.jpg",
+    cars: [
+      {
+        name: "Ertiga",
+        image: "ertiga.jpeg",
+        type: "MVP",
+        facilities: [
+          {
+            title: "AC",
+            seats: 6,
+            bags: 2,
+          },
+        ],
+      },
+      {
+        name: "Swift Dezire",
+        image: "swift_dezire.jpeg",
+        type: "Sedan",
+        facilities: [
+          {
+            title: "AC",
+            seats: 4,
+            bags: 3,
+          },
+        ],
+      },
+      {
+        name: "Innova Crysta",
+        image: "innova.jpeg",
+        type: "Premium MVP",
+        facilities: [
+          {
+            title: "AC",
+            seats: 6,
+            bags: 5,
+          },
+        ],
+      },
+      {
+        name: "Etios",
+        image: "etios.jpeg",
+        type: "Premium Sedan",
+        facilities: [
+          {
+            title: "AC",
+            seats: 4,
+            bags: 3,
+          },
+        ],
+      },
+      {
+        name: "WagonR",
+        image: "wagonr.jpeg",
+        type: "Hatchback",
+        facilities: [
+          {
+            title: "AC",
+            seats: 4,
+            bags: 2,
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export const DEVOTIONAL_TOUR_PACKAGES: ITourPackage[] = [
   {
     name: "Pune To Shirdi",
     image: "sai_baba.jpeg",

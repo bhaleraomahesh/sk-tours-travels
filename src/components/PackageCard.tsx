@@ -34,7 +34,7 @@ const PackageCard = (props: IPackageCard) => {
       sx={{
         width: {
           xs: "100%",
-          sm: 400,
+          sm: 300,
         },
         flexShrink: 0,
         borderRadius: 2, // Rounded corners for the card
@@ -45,7 +45,7 @@ const PackageCard = (props: IPackageCard) => {
         {/* Card Image */}
         <CardMedia
           component="img"
-          height={300}
+          height={225}
           image={`/sk-tours-travels/assets/images/${image}`}
           alt={name}
           sx={{
