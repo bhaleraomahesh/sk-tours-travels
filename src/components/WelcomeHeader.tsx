@@ -8,22 +8,30 @@ const WelcomeHeader = () => {
     <Box
       sx={{
         position: "absolute",
-        width: "100%",
-        top: "0%",
-        left: "0",
-        transform: "translateY(-50%)", // Center text vertically
-        whiteSpace: "wrap", // Prevent text wrapping
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)", // Center text both vertically and horizontally
+        fontSize: "24px",
+        fontWeight: "bold",
         color: "white",
+        whiteSpace: "nowrap", // Prevent text wrapping
         zIndex: 999,
         height: "100%",
-        pt: theme.spacing(7),
-        animation: "slideIn 2s ease-out forwards", // Apply sliding animation
-        "@keyframes slideIn": {
+        pt: theme.spacing(8),
+        animation: "enlargeText 3s ease-out forwards",
+        opacity: 0, // Start with opacity 0 to create fade-in effect
+        "@keyframes enlargeText": {
           "0%": {
-            transform: "translateY(-100%)", // Start off-screen to the left
+            transform: "translate(-50%, -50%) scale(0.5)", // Start at half the size
+            opacity: 0, // Start hidden
+          },
+          "50%": {
+            transform: "translate(-50%, -50%) scale(1.1)", // Slightly enlarge it
+            opacity: 1, // Fade in the text
           },
           "100%": {
-            transform: "translateY(0%)", // Slide into the normal position
+            transform: "translate(-50%, -50%) scale(1)", // Final size
+            opacity: 1, // Fully visible
           },
         },
       }}
