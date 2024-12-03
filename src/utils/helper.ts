@@ -75,7 +75,7 @@ export const COMMERCIAL_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Ertiga",
         image: "ertiga.jpeg",
-        type: "MVP",
+        type: "MPV",
         facilities: [
           {
             title: "AC",
@@ -99,7 +99,7 @@ export const COMMERCIAL_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Innova Crysta",
         image: "innova.jpeg",
-        type: "Premium MVP",
+        type: "Premium MPV",
         facilities: [
           {
             title: "AC",
@@ -141,7 +141,7 @@ export const COMMERCIAL_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Ertiga",
         image: "ertiga.jpeg",
-        type: "MVP",
+        type: "MPV",
         facilities: [
           {
             title: "AC",
@@ -165,7 +165,7 @@ export const COMMERCIAL_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Innova Crysta",
         image: "innova.jpeg",
-        type: "Premium MVP",
+        type: "Premium MPV",
         facilities: [
           {
             title: "AC",
@@ -210,7 +210,7 @@ export const HOLIDAY_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Ertiga",
         image: "ertiga.jpeg",
-        type: "MVP",
+        type: "MPV",
         facilities: [
           {
             title: "AC",
@@ -234,7 +234,7 @@ export const HOLIDAY_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Innova Crysta",
         image: "innova.jpeg",
-        type: "Premium MVP",
+        type: "Premium MPV",
         facilities: [
           {
             title: "AC",
@@ -276,7 +276,7 @@ export const HOLIDAY_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Ertiga",
         image: "ertiga.jpeg",
-        type: "MVP",
+        type: "MPV",
         facilities: [
           {
             title: "AC",
@@ -300,7 +300,7 @@ export const HOLIDAY_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Innova Crysta",
         image: "innova.jpeg",
-        type: "Premium MVP",
+        type: "Premium MPV",
         facilities: [
           {
             title: "AC",
@@ -342,7 +342,7 @@ export const HOLIDAY_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Ertiga",
         image: "ertiga.jpeg",
-        type: "MVP",
+        type: "MPV",
         facilities: [
           {
             title: "AC",
@@ -366,7 +366,7 @@ export const HOLIDAY_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Innova Crysta",
         image: "innova.jpeg",
-        type: "Premium MVP",
+        type: "Premium MPV",
         facilities: [
           {
             title: "AC",
@@ -408,7 +408,7 @@ export const HOLIDAY_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Ertiga",
         image: "ertiga.jpeg",
-        type: "MVP",
+        type: "MPV",
         facilities: [
           {
             title: "AC",
@@ -432,7 +432,7 @@ export const HOLIDAY_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Innova Crysta",
         image: "innova.jpeg",
-        type: "Premium MVP",
+        type: "Premium MPV",
         facilities: [
           {
             title: "AC",
@@ -477,7 +477,7 @@ export const DEVOTIONAL_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Ertiga",
         image: "ertiga.jpeg",
-        type: "MVP",
+        type: "MPV",
         facilities: [
           {
             title: "AC",
@@ -501,7 +501,7 @@ export const DEVOTIONAL_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Innova Crysta",
         image: "innova.jpeg",
-        type: "Premium MVP",
+        type: "Premium MPV",
         facilities: [
           {
             title: "AC",
@@ -543,7 +543,7 @@ export const DEVOTIONAL_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Ertiga",
         image: "ertiga.jpeg",
-        type: "MVP",
+        type: "MPV",
         facilities: [
           {
             title: "AC",
@@ -567,7 +567,7 @@ export const DEVOTIONAL_TOUR_PACKAGES: ITourPackage[] = [
       {
         name: "Innova Crysta",
         image: "innova.jpeg",
-        type: "Premium MVP",
+        type: "Premium MPV",
         facilities: [
           {
             title: "AC",
