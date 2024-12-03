@@ -51,7 +51,7 @@ const StyledFab = styled(Fab)({
   position: "fixed",
   bottom: "50%",
   right: "20px",
-  zIndex: 9999999, // Ensures the button is always on top
+  zIndex: 1002, // Ensures the button is always on top
 });
 
 export default ScrollToTopButton;
