@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { useTheme } from "@mui/material";
 import { ICar } from "../utils/helper";
+import LazyLoad from "react-lazyload";
 
 interface ICarItem {
   car: ICar;
@@ -39,11 +40,14 @@ const CarListItem = (props: ICarItem) => {
     >
       <ListItemAvatar sx={{ pl: 0, pr: 0 }}>
         <Avatar variant="square" sx={{ width: 100, height: 80 }}>
-          <img
-            src={`/sk-tours-travels/assets/images/${car.image}`}
-            alt={car.name}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
+          <LazyLoad height="100%" once>
+            <img
+              loading="lazy"
+              src={`/sk-tours-travels/assets/images/${car.image}`}
+              alt={car.name}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </LazyLoad>
         </Avatar>
       </ListItemAvatar>
       {/* Car Name and Facilities */}

@@ -1,5 +1,6 @@
 import { Stack, Box, Typography } from "@mui/material";
 import { useTheme } from "@mui/material";
+import LazyLoad from "react-lazyload";
 interface ICabInfo {
   heading: string;
   description: string;
@@ -61,17 +62,20 @@ const CabInfo: React.FC<ICabInfo> = (props: ICabInfo) => {
             borderRadius: "8px",
           }}
         >
-          <img
-            src={`/sk-tours-travels/assets/images/${image}`}
-            alt="Sample"
-            style={{
-              maxHeight: "100%",
-              width: "100%",
-              height: "100%",
-              borderRadius: "8px",
-              objectFit: "cover",
-            }}
-          />
+          <LazyLoad height="100%" once>
+            <img
+              src={`/sk-tours-travels/assets/images/${image}`}
+              alt="Sample"
+              loading="lazy"
+              style={{
+                maxHeight: "100%",
+                width: "100%",
+                height: "100%",
+                borderRadius: "8px",
+                objectFit: "cover",
+              }}
+            />
+          </LazyLoad>
         </Box>
       </Box>
     </Stack>

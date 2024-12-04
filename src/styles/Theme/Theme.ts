@@ -35,6 +35,10 @@ const theme = createTheme({
       fontWeight: 700,
       fontSize: "1.2rem",
     },
+    h5: {
+      fontWeight: 700,
+      fontSize: "1.0rem",
+    },
   },
   spacing: 8, // Default spacing unit (multiples of 8px)
   shape: {

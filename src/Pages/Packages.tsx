@@ -73,7 +73,7 @@ const Packages = forwardRef<HTMLDivElement, IPackage>((props, ref) => {
 
           <Box sx={{ mb: theme.spacing(7) }}>
             <Typography variant="h4" sx={{ mb: theme.spacing(1) }}>
-              Holiday Packages
+              Monsoon Packages
             </Typography>
             {/* Horizontal Scroll Container */}
             <Box
@@ -93,11 +93,15 @@ const Packages = forwardRef<HTMLDivElement, IPackage>((props, ref) => {
                 />
               ))}
             </Box>
+
+            <Typography variant="h5" sx={{ bgcolor: "#fff" }}>
+              Note: Tailored packages are available upon request.
+            </Typography>
           </Box>
 
           <Box sx={{ mb: theme.spacing(7) }}>
             <Typography variant="h4" sx={{ mb: theme.spacing(1) }}>
-              Devotional Packages
+              Dev Darshan
             </Typography>
             {/* Horizontal Scroll Container */}
             <Box
@@ -119,6 +123,9 @@ const Packages = forwardRef<HTMLDivElement, IPackage>((props, ref) => {
                 )
               )}
             </Box>
+            <Typography variant="h5" sx={{ bgcolor: "#fff" }}>
+              Note: Tailored packages are available upon request.
+            </Typography>
           </Box>
         </Box>
       </Paper>

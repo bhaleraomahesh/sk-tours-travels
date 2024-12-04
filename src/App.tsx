@@ -4,8 +4,9 @@ import { ThemeProvider } from "@mui/material/styles";
 import DrawerAppBar from "./DrawerAppBar";
 import theme from "./styles/Theme/Theme";
 import Home from "./Pages/Home";
-import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import TermsConditions from "./Pages/TermsConditions";
 import About from "./Pages/About";
+import SKAdvantages from "./Pages/SKAdvantages";
 import { useRef } from "react";
 import { DEFAULT_WHATSAPP_MSG, MenuType } from "./utils/helper";
 import Packages from "./Pages/Packages";
@@ -16,22 +17,16 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   const homeRef = useRef<HTMLDivElement>(null);
-  const PrivacyRef = useRef<HTMLDivElement>(null);
+  const TermsConditionsRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
   const packagesRef = useRef<HTMLDivElement>(null);
+  const SKAdvantagesRef = useRef<HTMLDivElement>(null);
 
   // Step 2: Function to handle smooth scroll to sections
   const scrollToSection = (section: string) => {
     switch (section) {
       case MenuType.Home:
         homeRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-
-        break;
-      case MenuType.PrivacyPolicy:
-        PrivacyRef.current?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
 
         break;
       case MenuType.About:
@@ -41,8 +36,25 @@ function App() {
         });
 
         break;
+
       case MenuType.Packages:
         packagesRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        break;
+
+      case MenuType.TermsConditions:
+        TermsConditionsRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        break;
+
+      case MenuType.OurBenefits:
+        SKAdvantagesRef.current?.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
@@ -75,7 +87,8 @@ function App() {
         <Home ref={homeRef} />
         <About ref={contactRef} />
         <Packages ref={packagesRef} phoneNumber="+917620318531" />
-        <PrivacyPolicy ref={PrivacyRef} />
+        <SKAdvantages ref={SKAdvantagesRef} />
+        <TermsConditions ref={TermsConditionsRef} />
         <Footer />
 
         <FloatingWhatsAppButton

@@ -3,7 +3,7 @@ import { Box, Paper, Typography } from "@mui/material";
 import { forwardRef } from "react";
 import { useTheme } from "@mui/material";
 
-const TermsConditions = forwardRef<HTMLDivElement, object>((_, ref) => {
+const SKAdvantages = forwardRef<HTMLDivElement, object>((_, ref) => {
   const theme = useTheme(); // Access the theme values
 
   return (
@@ -32,55 +32,44 @@ const TermsConditions = forwardRef<HTMLDivElement, object>((_, ref) => {
       >
         <Box component="section" sx={{ width: "100%", height: "auto" }}>
           <Typography variant="h3" sx={{ mb: theme.spacing(2) }}>
-            Terms And Conditions
+            Our Unique Benefits
           </Typography>
           <Typography>
             <ul>
               <li>
                 <Typography variant="body1" component="span">
-                  Cancellation Policy: If you cancel your trip at least 24 hours
-                  before the scheduled departure, a cancellation fee of 25% will
-                  apply.
+                  Trusted and experienced drivers ensuring safety.
                 </Typography>
               </li>
               <li>
                 <Typography variant="body1" component="span">
-                  Pricing: The quoted price includes one pickup and one
-                  drop-off.
+                  Convenient door-to-door service.
                 </Typography>
               </li>
               <li>
                 <Typography variant="body1" component="span">
-                  Important Reminder: Please ensure that you take your luggage
-                  and valuable items with you before being dropped off.
+                  Real-time GPS tracking for added security.
                 </Typography>
               </li>
               <li>
                 <Typography variant="body1" component="span">
-                  No Smoking or Drinking: Smoking and drinking are not allowed.
+                  24/7 availability and customer support.
                 </Typography>
               </li>
               <li>
                 <Typography variant="body1" component="span">
-                  No Pets Allowed: Pets are not permitted.
+                  Toll and parking fees included.
                 </Typography>
               </li>
               <li>
                 <Typography variant="body1" component="span">
-                  Payment: The remaining balance must be paid directly to SK
-                  Travels upon completion of the trip.
+                  No waiting charges, as per prior communication.
                 </Typography>
               </li>
               <li>
                 <Typography variant="body1" component="span">
-                  All content provided on this website is for informational
-                  purposes only.
-                </Typography>
-              </li>
-              <li>
-                <Typography variant="body1" component="span">
-                  We reserve the right to update or modify these Terms and
-                  Conditions at any time.
+                  No extra charges for additional kilometers within a specified
+                  limit..
                 </Typography>
               </li>
             </ul>
@@ -91,4 +80,4 @@ const TermsConditions = forwardRef<HTMLDivElement, object>((_, ref) => {
   );
 });
 
-export default TermsConditions;
+export default SKAdvantages;
