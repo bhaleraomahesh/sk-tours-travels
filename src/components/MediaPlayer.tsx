@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
-import LazyLoad from "react-lazyload";
 
 import { useTheme } from "@mui/material";
 import DiscountOffer from "./DiscountOffer";
