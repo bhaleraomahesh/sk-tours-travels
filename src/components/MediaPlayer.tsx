@@ -64,11 +64,8 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
         width: "100%",
         margin: "0 auto", // Center the Box horizontally
         position: "relative",
-      }}
-      style={{
-        textAlign: "center",
-        position: "relative",
         backgroundColor: "#fff",
+        textAlign: "center",
       }}
     >
       {/* <LazyLoad
@@ -112,7 +109,7 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
           flexDirection: "column",
           alignItems: "center",
           height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.3)", // Dark transparent background
+          backgroundColor: "rgba(0, 0, 0, 0.4)", // Dark transparent background
         }}
       ></Box>
       {isInView ? (
