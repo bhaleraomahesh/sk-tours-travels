@@ -68,6 +68,15 @@ function App() {
     }, 1000);
   };
 
+  const showPackages = () => {
+    packagesRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    setTimeout(() => {
+      window.scrollBy(0, -64);
+    }, 1000);
+  };
   return (
     <ThemeProvider theme={theme}>
       <DrawerAppBar handleMenuClick={scrollToSection} />
@@ -84,7 +93,7 @@ function App() {
       >
         <ScrollToTopButton />
 
-        <Home ref={homeRef} />
+        <Home ref={homeRef} showPackages={showPackages} />
         <About ref={contactRef} />
         <Packages ref={packagesRef} phoneNumber="+917620318531" />
         <SKAdvantages ref={SKAdvantagesRef} />

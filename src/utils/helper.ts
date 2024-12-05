@@ -12,12 +12,94 @@ export interface ICabInfo {
   image: string;
 }
 
+export interface ICar {
+  name: string;
+  image: string;
+  type?: string;
+  facilities: ICarFacility[];
+}
+
+export interface ICarFacility {
+  ac: boolean;
+  seats: number;
+  bags: number;
+}
 export interface ICallProps {
   phoneNumber: string;
   message?: string;
 }
 
+const CAB_LIST: ICar[] = [
+  {
+    name: "WagonR",
+    image: "wagonr.jpeg",
+    type: "Hatchback",
+    facilities: [
+      {
+        ac: true,
+        seats: 4,
+        bags: 2,
+      },
+    ],
+  },
+
+  {
+    name: "Swift Dezire",
+    image: "swift_dezire.jpeg",
+    type: "Sedan",
+    facilities: [
+      {
+        ac: true,
+        seats: 4,
+        bags: 3,
+      },
+    ],
+  },
+  {
+    name: "Etios",
+    image: "etios.jpeg",
+    type: "Premium Sedan",
+    facilities: [
+      {
+        ac: true,
+        seats: 4,
+        bags: 3,
+      },
+    ],
+  },
+  {
+    name: "Ertiga",
+    image: "ertiga.jpeg",
+    type: "MPV",
+    facilities: [
+      {
+        ac: true,
+        seats: 6,
+        bags: 2,
+      },
+    ],
+  },
+  {
+    name: "Innova Crysta",
+    image: "innova.jpeg",
+    type: "Premium MPV",
+    facilities: [
+      {
+        ac: true,
+        seats: 6,
+        bags: 5,
+      },
+    ],
+  },
+];
+
 export const DEFAULT_WHATSAPP_MSG = `Name: ?\nDate: ?\nTime: ?\nNumber of Passengers: ?\nPickup: ?\nDrop: ?`;
+
+export interface ITourPackage {
+  name: string;
+  image: string;
+  cars: ICar[];
+}
 
 export const CAB_INFO: ICabInfo[] = [
   {
@@ -45,1881 +127,153 @@ export const CAB_INFO: ICabInfo[] = [
     image: "enjoy_trip.jpg",
   },
 ];
-
-export interface ICarFacilities {
-  title: string;
-  seats: number;
-  bags: number;
-}
-
-export interface ICar {
-  name: string;
-  image: string;
-  type?: string;
-  facilities: ICarFacilities[];
-}
-
-export interface ITourPackage {
-  name: string;
-  image: string;
-  cars: ICar[];
-}
-
 // Sample data for the packages
 
 export const COMMERCIAL_TOUR_PACKAGES: ITourPackage[] = [
   {
     name: "Pune To Mumbai",
-    image: "airport1.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "mumbai_airport.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Pune To Nashik",
-    image: "airport2.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "nashik_airport.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Pune to shirdi",
-    image: "airport2.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "shirdi_airport.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Mumbai to pune",
-    image: "airport2.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "pune_airport.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Mumbai to Nashik",
-    image: "airport2.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "nashik_airport.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Mumbai to Shirdi",
-    image: "airport2.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "shirdi_airport.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Nashik to Pune",
-    image: "airport2.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "pune_airport.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Nashik to Mumbai",
-    image: "airport2.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "mumbai_airport.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Nashik to Shirdi",
-    image: "airport2.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "shirdi_airport.jpg",
+    cars: [...CAB_LIST],
   },
 ];
 
 export const HOLIDAY_TOUR_PACKAGES: ITourPackage[] = [
   {
     name: "Mahabaleshwar",
-    image: "holiday1.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "Mahableswar.jpg",
+    cars: [...CAB_LIST],
+  },
+  {
+    name: "Kaas Pathar",
+    image: "kaas.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Matheran",
-    image: "holiday2.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "matheran.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Tamahini",
-    image: "holiday3.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "Tamhini.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Lonavala",
-    image: "holiday4.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "Lonavala.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Lavasa city",
-    image: "holiday4.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "lavasa.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Tapola",
-    image: "holiday4.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "Tapola.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Igatpuri",
-    image: "holiday4.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "igatpuri.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Silvassa",
-    image: "holiday4.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "silvassa.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Amboli",
-    image: "holiday4.jpg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "amboli.jpg",
+    cars: [...CAB_LIST],
+  },
+  {
+    name: "Goa",
+    image: "goa.jpg",
+    cars: [...CAB_LIST],
   },
 ];
 
 export const DEVOTIONAL_TOUR_PACKAGES: ITourPackage[] = [
   {
     name: "Shirdi Darshan",
-    image: "sai_baba.jpeg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "saibaba.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Bhimashankar Panchvati-Trimbakeshwar Darshan",
-    image: "mahabaleshwar.jpeg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "bhimashankar.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Shanishingnapur Darshan",
-    image: "mahabaleshwar.jpeg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "shanishinganapur.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Ashtvinayak Darshan",
-    image: "mahabaleshwar.jpeg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "ashtavinayak.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Tuljabhawani Darshan",
-    image: "mahabaleshwar.jpeg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "Tuljabhawani.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Akkalkot-Gangapur-Pandharpur",
-    image: "mahabaleshwar.jpeg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "akkalkot.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Jejuri Darshan",
-    image: "mahabaleshwar.jpeg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Kaas pathar-Sajjan Ghad Satara",
-    image: "mahabaleshwar.jpeg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "Jejuri.jpg",
+    cars: [...CAB_LIST],
   },
   {
     name: "Ambabai Devi Darshan Kolhapur",
-    image: "mahabaleshwar.jpeg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Malvan Package",
-    image: "mahabaleshwar.jpeg",
-    cars: [
-      {
-        name: "Ertiga",
-        image: "ertiga.jpeg",
-        type: "MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 2,
-          },
-        ],
-      },
-      {
-        name: "Swift Dezire",
-        image: "swift_dezire.jpeg",
-        type: "Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "Innova Crysta",
-        image: "innova.jpeg",
-        type: "Premium MPV",
-        facilities: [
-          {
-            title: "AC",
-            seats: 6,
-            bags: 5,
-          },
-        ],
-      },
-      {
-        name: "Etios",
-        image: "etios.jpeg",
-        type: "Premium Sedan",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 3,
-          },
-        ],
-      },
-      {
-        name: "WagonR",
-        image: "wagonr.jpeg",
-        type: "Hatchback",
-        facilities: [
-          {
-            title: "AC",
-            seats: 4,
-            bags: 2,
-          },
-        ],
-      },
-    ],
+    image: "Amba_bai_darshgan.jpg",
+    cars: [...CAB_LIST],
   },
 ];

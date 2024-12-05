@@ -1,4 +1,4 @@
-import { Box, Divider, Paper, Stack, Typography } from "@mui/material";
+import { Box, Button, Divider, Paper, Stack, Typography } from "@mui/material";
 // import Grid from "@mui/material/Grid2";
 import { forwardRef } from "react";
 import MediaPlayer from "../components/MediaPlayer";
@@ -6,9 +6,14 @@ import CabInfo from "../components/CabInfo";
 import { useTheme } from "@mui/material";
 import { ICabInfo, CAB_INFO } from "../utils/helper";
 
-const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
+interface IHomeProps {
+  showPackages: () => void;
+}
+
+const Home = forwardRef<HTMLDivElement, IHomeProps>((props, ref) => {
   const theme = useTheme(); // Access the theme values
 
+  const { showPackages } = props;
   return (
     <Stack
       ref={ref}
@@ -22,7 +27,13 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
         pb: theme.spacing(2),
       }}
     >
-      <Box sx={{ width: "100%", position: "relative" }}>
+      <Box
+        sx={{
+          width: "100%",
+          height: "auto",
+          position: "relative",
+        }}
+      >
         <MediaPlayer mediaURL="/sk-tours-travels/assets/video/sktourvideo.mp4" />
       </Box>
 
@@ -39,6 +50,28 @@ const Home = forwardRef<HTMLDivElement, object>((_, ref) => {
           pl: theme.spacing(2),
         }}
       >
+        <Paper
+          sx={{
+            width: "100%",
+            position: "relative",
+            backgroundColor: "#ffde21",
+            p: theme.spacing(2),
+          }}
+        >
+          <Typography variant="h4" sx={{ mb: theme.spacing(1) }}>
+            Start Your Journey - Contact us today.
+          </Typography>
+          <Typography variant="h6" sx={{ mb: theme.spacing(1) }}>
+            Packages starting at ₹999, all-inclusive.
+          </Typography>
+          <Button
+            variant="outlined"
+            sx={{ mb: theme.spacing(1) }}
+            onClick={showPackages}
+          >
+            BOOK NOW
+          </Button>
+        </Paper>
         <Paper
           sx={{
             flex: 1, // Ensures equal width in row layout (50% each)

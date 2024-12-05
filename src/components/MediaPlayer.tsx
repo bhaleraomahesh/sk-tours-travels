@@ -5,6 +5,7 @@ import { useTheme } from "@mui/material";
 import DiscountOffer from "./DiscountOffer";
 import { DEFAULT_WHATSAPP_MSG } from "../utils/helper";
 import WelcomeHeader from "./WelcomeHeader";
+// import LazyLoad from "react-lazyload";
 
 interface IMediaPlayerProps {
   mediaURL: string;
@@ -58,15 +59,28 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
           xs: "60vh",
           sm: "70vh",
           md: "calc(100vh - 56px)",
-          position: "relative",
         },
         borderRadius: 0,
         width: "100%",
         margin: "0 auto", // Center the Box horizontally
         position: "relative",
       }}
-      style={{ textAlign: "center", position: "relative" }}
+      style={{
+        textAlign: "center",
+        position: "relative",
+        backgroundColor: "#fff",
+      }}
     >
+      {/* <LazyLoad
+        style={{
+          height: "100%",
+          position: "relative",
+          backgroundColor: "#fff",
+        }}
+        height="100%"
+        offset={100}
+        placeholder={<CircularProgress />}
+      > */}
       <video
         ref={videoRef}
         width="100%"
@@ -74,15 +88,18 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
         muted
         loop
         autoPlay
+        poster="/sk-tours-travels/assets/images/video_placeholder.png"
         playsInline
         style={{
           marginBottom: theme.spacing(1),
           objectFit: "cover",
           borderRadius: 0,
+          backgroundColor: "#fff",
         }}
       >
         <source src={mediaURL} type="video/mp4" />
       </video>
+      {/* </LazyLoad> */}
 
       <Box
         sx={{
@@ -91,6 +108,7 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
           top: "0%",
           left: "0",
           display: "flex",
+          zIndex: 1,
           flexDirection: "column",
           alignItems: "center",
           height: "100%",

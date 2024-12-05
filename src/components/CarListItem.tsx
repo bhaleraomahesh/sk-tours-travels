@@ -39,7 +39,10 @@ const CarListItem = (props: ICarItem) => {
       }}
     >
       <ListItemAvatar sx={{ pl: 0, pr: 0 }}>
-        <Avatar variant="square" sx={{ width: 100, height: 80 }}>
+        <Avatar
+          variant="square"
+          sx={{ width: 100, height: 80, backgroundColor: "transparent" }}
+        >
           <LazyLoad height="100%" once>
             <img
               loading="lazy"
