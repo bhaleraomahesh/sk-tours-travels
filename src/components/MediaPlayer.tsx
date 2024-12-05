@@ -15,7 +15,9 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
   const theme = useTheme();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isInView, setIsInView] = useState(false);
-
+  // State to manage video loading and play readiness
+  const [isVideoReady, setIsVideoReady] = useState(false);
+  const [isVideoLoading, setIsVideoLoading] = useState(true);
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -52,6 +54,17 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
     }
   }, [isInView]);
 
+  // Handle when the video metadata is loaded (onLoadedData)
+  const handleLoadedData = () => {
+    // console.log("Video metadata loaded.");
+  };
+
+  // Handle when the video is ready to play (onCanPlay)
+  const handleCanPlay = () => {
+    setIsVideoReady(true);
+    setIsVideoLoading(false);
+    // console.log("Video is ready to play.");
+  };
   return (
     <Box
       sx={{
@@ -93,6 +106,8 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
           borderRadius: 0,
           backgroundColor: "#fff",
         }}
+        onLoadedData={handleLoadedData} // Trigger when metadata is loaded
+        onCanPlay={handleCanPlay} // Trigger when video is ready to play
       >
         <source src={mediaURL} type="video/mp4" />
       </video>
@@ -109,7 +124,10 @@ const MediaPlayer: React.FC<IMediaPlayerProps> = (props: IMediaPlayerProps) => {
           flexDirection: "column",
           alignItems: "center",
           height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.4)", // Dark transparent background
+          backgroundColor:
+            !isVideoLoading && isVideoReady
+              ? "rgba(0, 0, 0, 0.4)"
+              : "transparent", // Dark transparent background
         }}
       ></Box>
       {isInView ? (
