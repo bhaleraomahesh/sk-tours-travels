@@ -25,6 +25,7 @@ const Home = forwardRef<HTMLDivElement, IHomeProps>((props, ref) => {
       sx={{
         width: "100%", // Ensure the Stack takes full width
         pb: theme.spacing(2),
+        backgroundColor: "#fff",
       }}
     >
       <Box
@@ -32,6 +33,7 @@ const Home = forwardRef<HTMLDivElement, IHomeProps>((props, ref) => {
           width: "100%",
           height: "auto",
           position: "relative",
+          backgroundColor: "#fff",
         }}
       >
         <MediaPlayer mediaURL="/sk-tours-travels/assets/video/sktourvideo.mp4" />
