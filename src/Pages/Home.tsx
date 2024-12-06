@@ -56,7 +56,7 @@ const Home = forwardRef<HTMLDivElement, IHomeProps>((props, ref) => {
           sx={{
             width: "100%",
             position: "relative",
-            backgroundColor: "#ffde21",
+            backgroundColor: "#FFEB3B",
             p: theme.spacing(2),
             display: "flex",
             flexDirection: "column",
