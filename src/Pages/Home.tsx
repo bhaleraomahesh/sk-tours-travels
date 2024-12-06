@@ -72,7 +72,11 @@ const Home = forwardRef<HTMLDivElement, IHomeProps>((props, ref) => {
           </Typography>
           <Typography
             variant="h6"
-            sx={{ mb: theme.spacing(1), textAlign: "center" }}
+            sx={{
+              mb: theme.spacing(1),
+              textAlign: "center",
+              fontWeight: "bold",
+            }}
           >
             Packages starting at ₹999, all-inclusive.
           </Typography>
