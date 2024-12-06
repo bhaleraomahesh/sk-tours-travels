@@ -58,12 +58,22 @@ const Home = forwardRef<HTMLDivElement, IHomeProps>((props, ref) => {
             position: "relative",
             backgroundColor: "#ffde21",
             p: theme.spacing(2),
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <Typography variant="h4" sx={{ mb: theme.spacing(1) }}>
-            Start Your Journey - Contact us today.
+          <Typography
+            variant="h1"
+            sx={{ mb: theme.spacing(1), textAlign: "center" }}
+          >
+            Start Your Journey - Contact Us Today
           </Typography>
-          <Typography variant="h6" sx={{ mb: theme.spacing(1) }}>
+          <Typography
+            variant="h6"
+            sx={{ mb: theme.spacing(1), textAlign: "center" }}
+          >
             Packages starting at ₹999, all-inclusive.
           </Typography>
           <Button
@@ -71,7 +81,13 @@ const Home = forwardRef<HTMLDivElement, IHomeProps>((props, ref) => {
             sx={{ mb: theme.spacing(1) }}
             onClick={showPackages}
           >
-            BOOK NOW
+            <Typography
+              variant="button"
+              color="inherit"
+              sx={{ fontWeight: "bold" }}
+            >
+              BOOK NOW
+            </Typography>
           </Button>
         </Paper>
         <Paper
