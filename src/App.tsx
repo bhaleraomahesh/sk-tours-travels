@@ -87,7 +87,7 @@ function App() {
           name="description"
           content={`Looking for reliable and affordable cab services in Maharashtra? Our professional taxi service offers safe, convenient, and comfortable transportation across the entire state, from bustling Mumbai to scenic Pune, vibrant Nagpur, and beyond. Whether you need a one-way ride, a round trip, or an airport transfer, our fleet of well-maintained cars and experienced drivers are ready to serve you 24/7.
 
-Our Maharashtra cab services cater to a variety of needs, including:
+Our cab services cater to a variety of needs, including:
 
 Airport Transfers: Hassle-free pick-up and drop-off at major airports like Chhatrapati Shivaji Maharaj International Airport (Mumbai) and Pune International Airport.
 Outstation Cabs: Comfortable, long-distance taxi rides to popular destinations like Lonavala, Alibaug, Shirdi, and Goa.
@@ -106,10 +106,12 @@ Book your ride now and experience the best cab service in Maharashtra with easy 
           name="keywords"
           content="Cab service in Maharashtra, Taxi service in Maharashtra, Reliable cab service, Airport transfer in Maharashtra, Outstation cabs Maharashtra, Corporate taxi service, Wedding transport service, Safe and reliable cabs, Pune Cab service, Nashik cabs service, shirdi cab service, cab services, transport service, affordable cab services, discount on cab service"
         />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         {/* <meta property="og:url" content="pets.abc" /> */}
         <meta property="og:site_name" content="SK Tours & Travels" />
         <meta property="og:locale" content="en_US" />
-        <meta property="og:type" content="transport" />
+        {/* <meta property="og:url" content="https://www.mywebsite.com" /> */}
+        <meta property="og:type" content="website" />
         {/* <meta property="fb:app_id" content="ID_APP_FACEBOOK" /> */}
       </Helmet>
       <ThemeProvider theme={theme}>
